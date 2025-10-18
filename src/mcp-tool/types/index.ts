@@ -53,8 +53,6 @@ export interface McpTool {
  * Tools Filter Options
  */
 export interface ToolsFilterOptions {
-  // Language
-  language?: 'zh' | 'en';
   // Allowed Tools
   allowTools?: ToolName[];
   // Allowed Projects

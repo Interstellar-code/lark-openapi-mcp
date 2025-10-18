@@ -77,7 +77,6 @@ program
     '-c, --tool-name-case <toolNameCase>',
     '(Optional) Tool Name Case, snake or camel or kebab or dot (default: "snake")',
   )
-  .option('-l, --language <language>', '(Optional) Tools Language, zh or en (default: "en")')
   .option(
     '--token-mode <tokenMode>',
     '(Optional) Token Mode, auto or user_access_token or tenant_access_token (default: "auto")',

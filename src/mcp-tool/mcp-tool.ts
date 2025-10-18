@@ -1,7 +1,7 @@
 import { Client } from '@larksuiteoapi/node-sdk';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { LarkMcpToolOptions, McpTool, SettableValue, ToolNameCase, TokenMode } from './types';
-import { AllTools, AllToolsZh } from './tools';
+import { AllTools } from './tools';
 import { defaultToolNames } from './constants';
 import { filterTools, larkOapiHandler, caseTransf, getShouldUseUAT } from './utils';
 import { LarkAuthHandler, isTokenValid } from '../auth';
@@ -42,15 +42,13 @@ export class LarkMcpTool {
       this.client = new Client({ appId: options.appId, appSecret: options.appSecret, ...options });
     }
 
-    const isZH = options.toolsOptions?.language === 'zh';
-
     const filterOptions = {
       allowTools: defaultToolNames,
       tokenMode: this.options.tokenMode || TokenMode.AUTO,
       ...options.toolsOptions,
     };
 
-    this.allTools = filterTools(isZH ? AllToolsZh : AllTools, filterOptions);
+    this.allTools = filterTools(AllTools, filterOptions);
 
     logger.info(`[LarkMcpTool] Initialized with ${this.allTools.length} tools, tokenMode: ${this.options.tokenMode}`);
   }
