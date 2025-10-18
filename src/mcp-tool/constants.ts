@@ -93,9 +93,14 @@ export const presetDocToolNames: ToolName[] = [
 
 export const presetTaskToolNames: ToolName[] = [
   'task.v2.task.create',
+  'task.v2.task.get',
+  'task.v2.task.list',
   'task.v2.task.patch',
+  'task.v2.task.delete',
   'task.v2.task.addMembers',
   'task.v2.task.addReminders',
+  'task.v2.taskSubtask.create',
+  'task.v2.taskSubtask.list',
 ];
 
 export const presetCalendarToolNames: ToolName[] = [

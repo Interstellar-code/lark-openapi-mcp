@@ -75,9 +75,14 @@
 | wiki.v1.node.search | 搜索知识库节点 | | ✓ | | | | ✓ | | |
 | contact.v3.user.batchGetId | 批量获取用户ID | ✓ | ✓ | | | | | | |
 | task.v2.task.create | 创建任务 | | | | | | | ✓ | |
+| task.v2.task.get | 获取任务详情 | | | | | | | ✓ | |
+| task.v2.task.list | 列取任务列表 | | | | | | | ✓ | |
 | task.v2.task.patch | 修改任务 | | | | | | | ✓ | |
+| task.v2.task.delete | 删除任务 | | | | | | | ✓ | |
 | task.v2.task.addMembers | 添加任务成员 | | | | | | | ✓ | |
 | task.v2.task.addReminders | 添加任务提醒 | | | | | | | ✓ | |
+| task.v2.taskSubtask.create | 创建子任务 | | | | | | | ✓ | |
+| task.v2.taskSubtask.list | 获取子任务列表 | | | | | | | ✓ | |
 | calendar.v4.calendarEvent.create | 创建日历事件 | | | | | | | | ✓ |
 | calendar.v4.calendarEvent.patch | 修改日历事件 | | | | | | | | ✓ |
 | calendar.v4.calendarEvent.get | 获取日历事件 | | | | | | | | ✓ |
@@ -107,7 +112,7 @@
 以文档为中心的预设，包括文档读取、导入、搜索和协作功能。
 
 ### preset.task.default
-任务管理预设，用于创建、修改和管理带有提醒和成员的任务。
+全面的任务管理预设，支持任务和子任务的完整增删改查（CRUD）操作。包括层级任务结构、任务成员和提醒功能。
 
 ### preset.calendar.default
 日历管理预设，用于创建、修改事件和查询可用性。

@@ -75,9 +75,14 @@ You can also combine presets with individual tools:
 | wiki.v1.node.search | Search Wiki nodes | | ✓ | | | | ✓ | | |
 | contact.v3.user.batchGetId | Batch get user IDs | ✓ | ✓ | | | | | | |
 | task.v2.task.create | Create task | | | | | | | ✓ | |
+| task.v2.task.get | Get task details | | | | | | | ✓ | |
+| task.v2.task.list | List tasks | | | | | | | ✓ | |
 | task.v2.task.patch | Modify task | | | | | | | ✓ | |
+| task.v2.task.delete | Delete task | | | | | | | ✓ | |
 | task.v2.task.addMembers | Add task members | | | | | | | ✓ | |
 | task.v2.task.addReminders | Add task reminders | | | | | | | ✓ | |
+| task.v2.taskSubtask.create | Create subtask | | | | | | | ✓ | |
+| task.v2.taskSubtask.list | List subtasks | | | | | | | ✓ | |
 | calendar.v4.calendarEvent.create | Create calendar event | | | | | | | | ✓ |
 | calendar.v4.calendarEvent.patch | Modify calendar event | | | | | | | | ✓ |
 | calendar.v4.calendarEvent.get | Get calendar event | | | | | | | | ✓ |
@@ -107,7 +112,7 @@ Specialized for batch operations on BitTable data, useful for bulk data processi
 Document-focused preset including document reading, importing, searching, and collaboration features.
 
 ### preset.task.default
-Task management focused preset for creating, modifying, and managing tasks with reminders and members.
+Comprehensive task management preset with full CRUD operations (create, read, update, delete) for tasks and subtasks. Includes support for hierarchical task structures, task members, and reminders.
 
 ### preset.calendar.default
 Calendar management preset for creating, modifying events, and querying availability.
