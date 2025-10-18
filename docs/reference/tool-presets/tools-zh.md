@@ -1361,7 +1361,28 @@
 | task.v1.task.uncomplete | [取消完成任务](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task/uncomplete) | 该接口用于取消任务的已完成状态 |
 
 ## 业务域: taskV2
-| MCP 工具名称 | API | 描述 | 
+
+> **📌 任务预设工具**:
+>
+> **`preset.task.default`** (9个工具) - 核心任务管理：
+> - ✅ `task.v2.task.create` - 创建任务
+> - ✅ `task.v2.task.get` - 获取任务详情
+> - ✅ `task.v2.task.list` - 列取任务列表
+> - ✅ `task.v2.task.patch` - 更新任务
+> - ✅ `task.v2.task.delete` - 删除任务
+> - ✅ `task.v2.task.addMembers` - 添加任务成员
+> - ✅ `task.v2.task.addReminders` - 添加任务提醒
+> - ✅ `task.v2.taskSubtask.create` - **创建子任务**（支持层级任务结构）
+> - ✅ `task.v2.taskSubtask.list` - **获取子任务列表**（查看任务层级）
+>
+> **`preset.task.full`** (51个工具) - 完整任务管理，包含所有taskV2端点：
+> - 包含 `preset.task.default` 中的所有9个工具
+> - 另外42个工具：附件、评论、自定义字段、分组、依赖、清单和动态订阅
+> - 查看下表完整列表（包含所有taskV2工具）
+>
+> 使用 `-t preset.task.default` 进行基础任务管理，或使用 `-t preset.task.full` 获取高级功能。
+
+| MCP 工具名称 | API | 描述 |
 | --- | --- | --- |
 | task.v2.attachment.delete | [删除附件](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/attachment/delete) | 提供一个附件GUID，删除该附件。删除后该附件不可再恢复 |
 | task.v2.attachment.get | [获取附件](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/attachment/get) | 提供一个附件GUID，返回附件的详细信息，包括GUID，名称，大小，上传时间，临时可下载链接等 |

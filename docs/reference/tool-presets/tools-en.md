@@ -1344,7 +1344,28 @@
 | task.v1.task.uncomplete | [Cancel completing a task](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1/task/uncomplete) | This API is used to cancel the "Completed" status of a task |
 
 ## Business domain: taskV2
-| MCP Tool Name | API | Description | 
+
+> **📌 Task Preset Tools**:
+>
+> **`preset.task.default`** (9 tools) - Essential task management:
+> - ✅ `task.v2.task.create` - Create tasks
+> - ✅ `task.v2.task.get` - Get task details
+> - ✅ `task.v2.task.list` - List tasks
+> - ✅ `task.v2.task.patch` - Modify tasks
+> - ✅ `task.v2.task.delete` - Delete tasks
+> - ✅ `task.v2.task.addMembers` - Add task members
+> - ✅ `task.v2.task.addReminders` - Add task reminders
+> - ✅ `task.v2.taskSubtask.create` - **Create subtasks** (supports hierarchical task structures)
+> - ✅ `task.v2.taskSubtask.list` - **List subtasks** (view task hierarchy)
+>
+> **`preset.task.full`** (51 tools) - Complete task management with all taskV2 endpoints:
+> - Includes all 9 tools from `preset.task.default`
+> - Plus 42 additional tools: attachments, comments, custom fields, sections, dependencies, tasklists, and activity subscriptions
+> - See the full list in the table below (all taskV2 tools are included)
+>
+> Use `-t preset.task.default` for basic task management or `-t preset.task.full` for advanced features.
+
+| MCP Tool Name | API | Description |
 | --- | --- | --- |
 | task.v2.attachment.delete | [Delete Attachment](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/attachment/delete) | Providing an attachment GUID, delete the attachment. After deletion, the attachment cannot be recovered |
 | task.v2.attachment.get | [Get Attachment](https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/attachment/get) | Providing an attachment GUID, get the detail of the attachment, including GUID, name, size, uploaded time, temporary downloadable url, etc |

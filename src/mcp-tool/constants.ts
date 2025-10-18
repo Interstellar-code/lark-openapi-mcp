@@ -34,6 +34,10 @@ export enum PresetName {
    */
   TASK_DEFAULT = 'preset.task.default',
   /**
+   * Complete task management with all taskV2 API endpoints (51 tools)
+   */
+  TASK_FULL = 'preset.task.full',
+  /**
    * Calendar event management tools
    */
   CALENDAR_DEFAULT = 'preset.calendar.default',
@@ -103,6 +107,75 @@ export const presetTaskToolNames: ToolName[] = [
   'task.v2.taskSubtask.list',
 ];
 
+export const presetTaskFullToolNames: ToolName[] = [
+  // Attachment Management (3)
+  'task.v2.attachment.delete',
+  'task.v2.attachment.get',
+  'task.v2.attachment.list',
+
+  // Comment Management (5)
+  'task.v2.comment.create',
+  'task.v2.comment.delete',
+  'task.v2.comment.get',
+  'task.v2.comment.list',
+  'task.v2.comment.patch',
+
+  // Custom Field Management (8)
+  'task.v2.customField.add',
+  'task.v2.customField.create',
+  'task.v2.customField.get',
+  'task.v2.customField.list',
+  'task.v2.customField.patch',
+  'task.v2.customField.remove',
+  'task.v2.customFieldOption.create',
+  'task.v2.customFieldOption.patch',
+
+  // Section Management (6)
+  'task.v2.section.create',
+  'task.v2.section.delete',
+  'task.v2.section.get',
+  'task.v2.section.list',
+  'task.v2.section.patch',
+  'task.v2.section.tasks',
+
+  // Task Management (13)
+  'task.v2.task.addDependencies',
+  'task.v2.task.addMembers',
+  'task.v2.task.addReminders',
+  'task.v2.task.addTasklist',
+  'task.v2.task.create',
+  'task.v2.task.delete',
+  'task.v2.task.get',
+  'task.v2.task.list',
+  'task.v2.task.patch',
+  'task.v2.task.removeDependencies',
+  'task.v2.task.removeMembers',
+  'task.v2.task.removeReminders',
+  'task.v2.task.removeTasklist',
+  'task.v2.task.tasklists',
+
+  // Subtask Management (2)
+  'task.v2.taskSubtask.create',
+  'task.v2.taskSubtask.list',
+
+  // Tasklist Management (9)
+  'task.v2.tasklist.addMembers',
+  'task.v2.tasklist.create',
+  'task.v2.tasklist.delete',
+  'task.v2.tasklist.get',
+  'task.v2.tasklist.list',
+  'task.v2.tasklist.patch',
+  'task.v2.tasklist.removeMembers',
+  'task.v2.tasklist.tasks',
+
+  // Activity Subscription Management (5)
+  'task.v2.tasklistActivitySubscription.create',
+  'task.v2.tasklistActivitySubscription.delete',
+  'task.v2.tasklistActivitySubscription.get',
+  'task.v2.tasklistActivitySubscription.list',
+  'task.v2.tasklistActivitySubscription.patch',
+];
+
 export const presetCalendarToolNames: ToolName[] = [
   'calendar.v4.calendarEvent.create',
   'calendar.v4.calendarEvent.patch',
@@ -126,5 +199,6 @@ export const presetTools: Record<PresetName, ToolName[]> = {
   [PresetName.BASE_BATCH]: presetBaseRecordBatchToolNames,
   [PresetName.DOC_DEFAULT]: presetDocToolNames,
   [PresetName.TASK_DEFAULT]: presetTaskToolNames,
+  [PresetName.TASK_FULL]: presetTaskFullToolNames,
   [PresetName.CALENDAR_DEFAULT]: presetCalendarToolNames,
 };

@@ -50,44 +50,86 @@
 
 ## 预设工具集详表
 
-| 工具名称 | 功能描述 | preset.light | preset.default (默认) | preset.im.default | preset.base.default | preset.base.batch | preset.doc.default | preset.task.default | preset.calendar.default |
-| --- | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| im.v1.chat.create | 创建群 | | ✓ | ✓ | | | | | |
-| im.v1.chat.list | 获取群列表 | | ✓ | ✓ | | | | | |
-| im.v1.chat.search | 搜索群 | ✓ | | | | | | | |
-| im.v1.chatMembers.get | 获取群成员 | | ✓ | ✓ | | | | | |
-| im.v1.message.create | 发送消息 | ✓ | ✓ | ✓ | | | | | |
-| im.v1.message.list | 获取消息列表 | ✓ | ✓ | ✓ | | | | | |
-| bitable.v1.app.create | 创建多维表格 | | ✓ | | ✓ | ✓ | | | |
-| bitable.v1.appTable.create | 创建多维表格数据表 | | ✓ | | ✓ | ✓ | | | |
-| bitable.v1.appTable.list | 获取多维表格数据表列表 | | ✓ | | ✓ | ✓ | | | |
-| bitable.v1.appTableField.list | 获取多维表格数据表字段列表 | | ✓ | | ✓ | ✓ | | | |
-| bitable.v1.appTableRecord.search | 搜索多维表格数据表记录 | ✓ | ✓ | | ✓ | ✓ | | | |
-| bitable.v1.appTableRecord.create | 创建多维表格数据表记录 | | ✓ | | ✓ | | | | |
-| bitable.v1.appTableRecord.batchCreate | 批量创建多维表格数据表记录 | ✓ | | | | ✓ | | | |
-| bitable.v1.appTableRecord.update | 更新多维表格数据表记录 | | ✓ | | ✓ | | | | |
-| bitable.v1.appTableRecord.batchUpdate | 批量更新多维表格数据表记录 | | | | | ✓ | | | |
-| docx.v1.document.rawContent | 获取文档内容 | ✓ | ✓ | | | | ✓ | | |
-| docx.builtin.import | 导入文档 | ✓ | ✓ | | | | ✓ | | |
-| docx.builtin.search | 搜索文档 | ✓ | ✓ | | | | ✓ | | |
-| drive.v1.permissionMember.create | 添加协作者权限 | | ✓ | | | | ✓ | | |
-| wiki.v2.space.getNode | 获取知识库节点 | ✓ | ✓ | | | | ✓ | | |
-| wiki.v1.node.search | 搜索知识库节点 | | ✓ | | | | ✓ | | |
-| contact.v3.user.batchGetId | 批量获取用户ID | ✓ | ✓ | | | | | | |
-| task.v2.task.create | 创建任务 | | | | | | | ✓ | |
-| task.v2.task.get | 获取任务详情 | | | | | | | ✓ | |
-| task.v2.task.list | 列取任务列表 | | | | | | | ✓ | |
-| task.v2.task.patch | 修改任务 | | | | | | | ✓ | |
-| task.v2.task.delete | 删除任务 | | | | | | | ✓ | |
-| task.v2.task.addMembers | 添加任务成员 | | | | | | | ✓ | |
-| task.v2.task.addReminders | 添加任务提醒 | | | | | | | ✓ | |
-| task.v2.taskSubtask.create | 创建子任务 | | | | | | | ✓ | |
-| task.v2.taskSubtask.list | 获取子任务列表 | | | | | | | ✓ | |
-| calendar.v4.calendarEvent.create | 创建日历事件 | | | | | | | | ✓ |
-| calendar.v4.calendarEvent.patch | 修改日历事件 | | | | | | | | ✓ |
-| calendar.v4.calendarEvent.get | 获取日历事件 | | | | | | | | ✓ |
-| calendar.v4.freebusy.list | 查询忙闲状态 | | | | | | | | ✓ |
-| calendar.v4.calendar.primary | 获取主日历 | | | | | | | | ✓ |
+| 工具名称 | 功能描述 | preset.light | preset.default (默认) | preset.im.default | preset.base.default | preset.base.batch | preset.doc.default | preset.task.default | preset.task.full | preset.calendar.default |
+| --- | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| im.v1.chat.create | 创建群 | | ✓ | ✓ | | | | | | |
+| im.v1.chat.list | 获取群列表 | | ✓ | ✓ | | | | | | |
+| im.v1.chat.search | 搜索群 | ✓ | | | | | | | | |
+| im.v1.chatMembers.get | 获取群成员 | | ✓ | ✓ | | | | | | |
+| im.v1.message.create | 发送消息 | ✓ | ✓ | ✓ | | | | | | |
+| im.v1.message.list | 获取消息列表 | ✓ | ✓ | ✓ | | | | | | |
+| bitable.v1.app.create | 创建多维表格 | | ✓ | | ✓ | ✓ | | | | |
+| bitable.v1.appTable.create | 创建多维表格数据表 | | ✓ | | ✓ | ✓ | | | | |
+| bitable.v1.appTable.list | 获取多维表格数据表列表 | | ✓ | | ✓ | ✓ | | | | |
+| bitable.v1.appTableField.list | 获取多维表格数据表字段列表 | | ✓ | | ✓ | ✓ | | | | |
+| bitable.v1.appTableRecord.search | 搜索多维表格数据表记录 | ✓ | ✓ | | ✓ | ✓ | | | | |
+| bitable.v1.appTableRecord.create | 创建多维表格数据表记录 | | ✓ | | ✓ | | | | | |
+| bitable.v1.appTableRecord.batchCreate | 批量创建多维表格数据表记录 | ✓ | | | | ✓ | | | | |
+| bitable.v1.appTableRecord.update | 更新多维表格数据表记录 | | ✓ | | ✓ | | | | | |
+| bitable.v1.appTableRecord.batchUpdate | 批量更新多维表格数据表记录 | | | | | ✓ | | | | |
+| docx.v1.document.rawContent | 获取文档内容 | ✓ | ✓ | | | | ✓ | | | |
+| docx.builtin.import | 导入文档 | ✓ | ✓ | | | | ✓ | | | |
+| docx.builtin.search | 搜索文档 | ✓ | ✓ | | | | ✓ | | | |
+| drive.v1.permissionMember.create | 添加协作者权限 | | ✓ | | | | ✓ | | | |
+| wiki.v2.space.getNode | 获取知识库节点 | ✓ | ✓ | | | | ✓ | | | |
+| wiki.v1.node.search | 搜索知识库节点 | | ✓ | | | | ✓ | | | |
+| contact.v3.user.batchGetId | 批量获取用户ID | ✓ | ✓ | | | | | | | |
+| task.v2.attachment.delete | 删除附件 | | | | | | | | ✓ | |
+| task.v2.attachment.get | 获取附件详情 | | | | | | | | ✓ | |
+| task.v2.attachment.list | 列取附件 | | | | | | | | ✓ | |
+| task.v2.comment.create | 创建评论 | | | | | | | | ✓ | |
+| task.v2.comment.delete | 删除评论 | | | | | | | | ✓ | |
+| task.v2.comment.get | 获取评论详情 | | | | | | | | ✓ | |
+| task.v2.comment.list | 获取评论列表 | | | | | | | | ✓ | |
+| task.v2.comment.patch | 更新评论 | | | | | | | | ✓ | |
+| task.v2.customField.add | 将自定义字段加入资源 | | | | | | | | ✓ | |
+| task.v2.customField.create | 创建自定义字段 | | | | | | | | ✓ | |
+| task.v2.customField.get | 获取自定义字段 | | | | | | | | ✓ | |
+| task.v2.customField.list | 列取自定义字段 | | | | | | | | ✓ | |
+| task.v2.customField.patch | 更新自定义字段 | | | | | | | | ✓ | |
+| task.v2.customField.remove | 将自定义字段移出资源 | | | | | | | | ✓ | |
+| task.v2.customFieldOption.create | 创建自定义任务选项 | | | | | | | | ✓ | |
+| task.v2.customFieldOption.patch | 更新自定义字段选项 | | | | | | | | ✓ | |
+| task.v2.section.create | 创建自定义分组 | | | | | | | | ✓ | |
+| task.v2.section.delete | 删除自定义分组 | | | | | | | | ✓ | |
+| task.v2.section.get | 获取自定义分组详情 | | | | | | | | ✓ | |
+| task.v2.section.list | 获取自定义分组列表 | | | | | | | | ✓ | |
+| task.v2.section.patch | 更新自定义分组 | | | | | | | | ✓ | |
+| task.v2.section.tasks | 获取自定义分组任务列表 | | | | | | | | ✓ | |
+| task.v2.task.addDependencies | 添加依赖 | | | | | | | | ✓ | |
+| task.v2.task.addMembers | 添加任务成员 | | | | | | | ✓ | ✓ | |
+| task.v2.task.addReminders | 添加任务提醒 | | | | | | | ✓ | ✓ | |
+| task.v2.task.addTasklist | 任务加入清单 | | | | | | | | ✓ | |
+| task.v2.task.create | 创建任务 | | | | | | | ✓ | ✓ | |
+| task.v2.task.delete | 删除任务 | | | | | | | ✓ | ✓ | |
+| task.v2.task.get | 获取任务详情 | | | | | | | ✓ | ✓ | |
+| task.v2.task.list | 列取任务列表 | | | | | | | ✓ | ✓ | |
+| task.v2.task.patch | 更新任务 | | | | | | | ✓ | ✓ | |
+| task.v2.task.removeDependencies | 移除依赖 | | | | | | | | ✓ | |
+| task.v2.task.removeMembers | 移除任务成员 | | | | | | | | ✓ | |
+| task.v2.task.removeReminders | 移除任务提醒 | | | | | | | | ✓ | |
+| task.v2.task.removeTasklist | 任务移出清单 | | | | | | | | ✓ | |
+| task.v2.task.tasklists | 列取任务所在清单 | | | | | | | | ✓ | |
+| task.v2.taskSubtask.create | 创建子任务 | | | | | | | ✓ | ✓ | |
+| task.v2.taskSubtask.list | 获取子任务列表 | | | | | | | ✓ | ✓ | |
+| task.v2.tasklist.addMembers | 添加清单成员 | | | | | | | | ✓ | |
+| task.v2.tasklist.create | 创建清单 | | | | | | | | ✓ | |
+| task.v2.tasklist.delete | 删除清单 | | | | | | | | ✓ | |
+| task.v2.tasklist.get | 获取清单详情 | | | | | | | | ✓ | |
+| task.v2.tasklist.list | 获取清单列表 | | | | | | | | ✓ | |
+| task.v2.tasklist.patch | 更新清单 | | | | | | | | ✓ | |
+| task.v2.tasklist.removeMembers | 移除清单成员 | | | | | | | | ✓ | |
+| task.v2.tasklist.tasks | 获取清单任务列表 | | | | | | | | ✓ | |
+| task.v2.tasklistActivitySubscription.create | 创建动态订阅 | | | | | | | | ✓ | |
+| task.v2.tasklistActivitySubscription.delete | 删除动态订阅 | | | | | | | | ✓ | |
+| task.v2.tasklistActivitySubscription.get | 获取动态订阅 | | | | | | | | ✓ | |
+| task.v2.tasklistActivitySubscription.list | 列取动态订阅 | | | | | | | | ✓ | |
+| task.v2.tasklistActivitySubscription.patch | 更新动态订阅 | | | | | | | | ✓ | |
+| calendar.v4.calendarEvent.create | 创建日历事件 | | | | | | | | | ✓ |
+| calendar.v4.calendarEvent.patch | 修改日历事件 | | | | | | | | | ✓ |
+| calendar.v4.calendarEvent.get | 获取日历事件 | | | | | | | | | ✓ |
+| calendar.v4.freebusy.list | 查询忙闲状态 | | | | | | | | | ✓ |
+| calendar.v4.calendar.primary | 获取主日历 | | | | | | | | | ✓ |
 
 > **说明**：表格中"✓"表示该工具包含在对应的预设工具集中。使用`-t preset.xxx`参数时，会启用该列标有"✓"的工具。
 
@@ -112,7 +154,19 @@
 以文档为中心的预设，包括文档读取、导入、搜索和协作功能。
 
 ### preset.task.default
-全面的任务管理预设，支持任务和子任务的完整增删改查（CRUD）操作。包括层级任务结构、任务成员和提醒功能。
+全面的任务管理预设，支持任务和子任务的完整增删改查（CRUD）操作。包括层级任务结构、任务成员和提醒功能。包含9个核心任务管理工具。
+
+### preset.task.full
+完整的任务管理预设，包含所有51个taskV2 API端点。包括`preset.task.default`中的所有功能，以及：
+- **附件管理**：上传、下载和管理任务附件
+- **评论系统**：创建、读取、更新和删除任务评论
+- **自定义字段**：为任务创建和管理自定义字段（数字、日期、成员、单选/多选、文本）
+- **分组管理**：在清单中将任务组织到分组/区域中
+- **任务依赖**：设置任务之间的前置/后置依赖关系，用于甘特图视图
+- **清单管理**：清单（项目）的完整增删改查操作
+- **动态订阅**：订阅任务/清单事件并接收通知
+
+适用于高级任务管理场景、项目管理工具和全面的工作流自动化。
 
 ### preset.calendar.default
 日历管理预设，用于创建、修改事件和查询可用性。
