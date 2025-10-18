@@ -41,9 +41,13 @@ Solutions:
 
 ### Token limit exceeded prompt after starting MCP service
 
+Note:
+- By default, the MCP server loads all 1,274 available tools, which may exceed token limits for some AI models with smaller context windows.
+
 Solutions:
-- Use `-t` (or `-t` in MCP configuration `args`) to reduce the number of enabled APIs.
-- Use models that support larger context lengths.
+- Use the `-t` parameter to limit tools to a specific preset or subset. For example: `-t preset.light` (minimal tools) or `-t preset.default` (commonly used tools).
+- Specify only the tools you need: `-t im.v1.message.create,im.v1.chat.create,docx.v1.document.rawContent`
+- Use AI models that support larger context lengths (e.g., Claude 3.5 Sonnet, GPT-4 Turbo).
 
 ### Unable to connect or receive messages in SSE/Streamable mode
 

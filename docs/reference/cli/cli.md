@@ -71,9 +71,8 @@ The `lark-mcp mcp` tool provides various command line parameters to flexibly con
 | `--app-id` | `-a` | Feishu/Lark application App ID | `-a cli_xxxx` |
 | `--app-secret` | `-s` | Feishu/Lark application App Secret | `-s xxxx` |
 | `--domain` | `-d` | Feishu/Lark API domain, default is https://open.feishu.cn | `-d https://open.larksuite.com` |
-| `--tools` | `-t` | List of API tools to enable, separated by spaces or commas | `-t im.v1.message.create,im.v1.chat.create` |
+| `--tools` | `-t` | List of API tools to enable, separated by spaces or commas. By default, all 1,274 tools are loaded. Use this to limit to specific tools or presets | `-t im.v1.message.create,im.v1.chat.create` or `-t preset.light` |
 | `--tool-name-case` | `-c` | Tool name format, options are snake, camel, dot, or kebab, default is snake | `-c camel` |
-| `--language` | `-l` | Tools language, options are zh or en, default is en | `-l zh` |
 | `--user-access-token` | `-u` | User access token for calling APIs as a user | `-u u-xxxx` |
 | `--token-mode` |  | API token type, options are auto, tenant_access_token, or user_access_token, default is auto | `--token-mode user_access_token` |
 | `--oauth` |  | Enable MCP Auth Server to get user_access_token and auto request user login when token expires (Beta) | `--oauth` |

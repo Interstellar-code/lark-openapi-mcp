@@ -4,9 +4,22 @@ This document provides detailed information about all preset tool collections av
 
 ## Overview
 
-If you have no special requirements, you can keep the default preset to use common functions. When you need fine control or want to understand the complete list, please refer to the preset table below.
+**Default Behavior (No Configuration Required):**
+
+By default, the MCP server loads **all 1,274 available English API tools** automatically when you start it without the `-t` parameter. This means you have immediate access to the complete Feishu/Lark API without any configuration.
+
+**When to Use Presets:**
+
+Presets are **optional** and only needed when you want to:
+- Limit the available tools to a specific subset (e.g., only messaging tools)
+- Reduce token usage in AI models with limited context windows
+- Focus on specific use cases (e.g., calendar management, document operations)
+
+If you have no special requirements, you can use the default configuration (all tools) without specifying any preset.
 
 ## How to Use Presets
+
+**Important**: Presets are only used when you explicitly specify the `-t` parameter. Without the `-t` parameter, all 1,274 tools are loaded by default.
 
 To use a preset, specify it in the `-t` parameter:
 
@@ -136,10 +149,10 @@ You can also combine presets with individual tools:
 ## Preset Descriptions
 
 ### preset.light
-A minimal preset that includes only the most essential tools for basic messaging and document operations. Ideal for lightweight integrations.
+A minimal preset that includes only the most essential tools for basic messaging and document operations. Ideal for lightweight integrations or when you need to minimize token usage.
 
-### preset.default (Default)
-The default preset that includes commonly used tools across messaging, documents, databases, and collaboration. Recommended for most users.
+### preset.default
+A commonly used preset that includes tools across messaging, documents, databases, and collaboration. Use this when you want a curated set of well-tested tools instead of all 1,274 available tools.
 
 ### preset.im.default
 Focused on instant messaging functionality, including chat creation, member management, and message handling.

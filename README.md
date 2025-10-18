@@ -154,7 +154,7 @@ To switch to the international version of Lark, add the `--domain` parameter in 
 
 > ⚠️ **Document Editing**: Direct editing of Feishu cloud documents is not supported (only importing and reading are available)
 
-By default, the MCP service enables common APIs. To enable other tools or only specific APIs or presets, you can specify them using the `-t` parameter in the MCP Client configuration (JSON):
+By default, the MCP service loads **all 1,274 available English API tools** automatically. If you want to limit the tools to specific APIs or use predefined presets, you can specify them using the `-t` parameter in the MCP Client configuration (JSON):
 
 ```json
 {
@@ -178,7 +178,9 @@ For detailed information about all preset tool collections and which tools are i
 
 A complete list of all supported Feishu/Lark tools can be found in [tools.md](./docs/reference/tool-presets/tools-en.md).
 
-> **⚠️ Notice**：Non-preset APIs have not undergone compatibility testing, and the AI may not perform optimally during the process of understanding and using them.
+> **💡 Tip**: All 1,274 tools are available by default without any configuration. You only need to use the `-t` parameter if you want to limit the available tools to a specific subset or preset.
+
+> **⚠️ Notice**: Non-preset APIs have not undergone compatibility testing, and the AI may not perform optimally during the process of understanding and using them.
 
 ### Development Integration
 

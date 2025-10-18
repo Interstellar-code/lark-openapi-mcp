@@ -162,7 +162,7 @@ describe('filterTools', () => {
 
   it('应该处理不包含任何过滤条件的情况', () => {
     const filtered = filterTools(mockTools, {});
-    expect(filtered.length).toBe(0); // 因为没有指定allowTools和allowProjects
+    expect(filtered.length).toBe(4); // 当没有指定allowTools和allowProjects时，返回所有工具
   });
 
   it('应该组合多个过滤条件 - 允许项目和名称', () => {

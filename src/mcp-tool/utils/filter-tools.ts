@@ -2,11 +2,17 @@ import { ToolName, ProjectName } from '../tools';
 import { McpTool, ToolsFilterOptions, TokenMode } from '../types';
 
 export function filterTools(tools: McpTool[], options: ToolsFilterOptions) {
-  let filteredTools = tools.filter(
-    (tool) =>
-      options.allowTools?.includes(tool.name as ToolName) ||
-      options.allowProjects?.includes(tool.project as ProjectName),
-  );
+  // If neither allowTools nor allowProjects is specified, use all tools
+  // Otherwise, filter by the specified criteria
+  let filteredTools = tools;
+
+  if (options.allowTools || options.allowProjects) {
+    filteredTools = tools.filter(
+      (tool) =>
+        options.allowTools?.includes(tool.name as ToolName) ||
+        options.allowProjects?.includes(tool.project as ProjectName),
+    );
+  }
 
   // Filter by token mode
   if (options.tokenMode && options.tokenMode !== TokenMode.AUTO) {

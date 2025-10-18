@@ -2,7 +2,6 @@ import { Client } from '@larksuiteoapi/node-sdk';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { LarkMcpToolOptions, McpTool, SettableValue, ToolNameCase, TokenMode } from './types';
 import { AllTools } from './tools';
-import { defaultToolNames } from './constants';
 import { filterTools, larkOapiHandler, caseTransf, getShouldUseUAT } from './utils';
 import { LarkAuthHandler, isTokenValid } from '../auth';
 import { safeJsonParse } from '../utils/safe-json-parse';
@@ -43,7 +42,6 @@ export class LarkMcpTool {
     }
 
     const filterOptions = {
-      allowTools: defaultToolNames,
       tokenMode: this.options.tokenMode || TokenMode.AUTO,
       ...options.toolsOptions,
     };

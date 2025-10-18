@@ -1,4 +1,11 @@
 # Lark MCP Tools List
+
+> **💡 All Tools Available by Default**: The MCP server loads all **1,274 English API tools** automatically when started without the `-t` parameter. You have immediate access to the complete Feishu/Lark API without any configuration.
+>
+> **When to Use Filtering**: Use the `-t` parameter only if you want to limit the available tools to a specific subset or preset (e.g., `-t preset.light` or `-t im.v1.message.create,im.v1.chat.create`).
+
+This document lists all available Feishu/Lark MCP tools organized by business domain.
+
 ## Business domain: acsV1
 | MCP Tool Name | API | Description | 
 | --- | --- | --- |
